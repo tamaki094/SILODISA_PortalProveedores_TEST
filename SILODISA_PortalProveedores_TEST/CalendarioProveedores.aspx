@@ -1,0 +1,30 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CalendarioProveedores.aspx.cs" Inherits="SILODISA_PortalProveedores_TEST.WebForm4" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">  
+    <link href="packages/core/main.css" rel="stylesheet" />
+    <link href="packages/daygrid/main.css" rel="stylesheet" />
+    <link href="Content/Calendario_FullCalendar.css" rel="stylesheet" /> 
+
+    <script type="text/javascript">
+        var eventos = new Array();     
+    </script>
+    <script src="Scripts/modernizr-2.8.3.js"></script>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/jquery-ui-1.12.0.min.js"></script>
+    <script src="packages/core/main.js"></script>
+    <script src="packages/interaction/main.js"></script>
+    <script src="packages/daygrid/main.js"></script>
+    <script src="Scripts/Calendario_FullCalendar.js"></script>
+    <script type="text/javascript">
+        cargarCitas();
+    </script>
+
+    <div id='calendar' draggable="false">
+
+    </div>
+    <div id="funciones">
+        <script>
+
+        </script>
+    </div>
+
+</asp:Content>

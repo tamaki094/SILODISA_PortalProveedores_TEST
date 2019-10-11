@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Portal_ProveedoresModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="IDRoles" />
+    </Key>
+    <Property Name="IDRoles" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sDescripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sNombre" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="sUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sClave" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDRoles" Type="int" Nullable="false" />
+    <Property Name="sEMail" Type="varchar" MaxLength="255" />
+    <Property Name="sContacto" Type="varchar" MaxLength="250" />
+    <Property Name="bActivo" Type="bit" Nullable="false" />
+    <Property Name="sTelefono" Type="varchar" MaxLength="150" />
+    <Property Name="sCelular" Type="varchar" MaxLength="150" />
+    <Property Name="sRFC" Type="varchar" MaxLength="15" />
+    <Property Name="sDireccionFiscal" Type="varchar" MaxLength="500" />
+    <Property Name="bDatosActualizados" Type="bit" Nullable="false" />
+    <Property Name="sExtension" Type="varchar" MaxLength="50" />
+    <Property Name="sNombreReprLegal" Type="varchar" MaxLength="200" />
+    <Property Name="sNumProveedor" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK_IDRoles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="IDRoles" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IDRoles" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Portal_ProveedoresModelStoreContainer">
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_IDRoles" Association="Self.FK_IDRoles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SILODISA_PortalProveedores_TEST.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/css/bootstrap-toggle.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="">
+            <a class="navbar-brand" href="#">Portal Proveedores&nbsp;<i class="fas fa-dolly"></i></a>   
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 <ul class="navbar-nav mr-auto navbar-left">
+                    <li class="nav-item">
+                        <a class="nav-link"href="CerrarSesion.aspx">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton CssClass="nav-link" PostBackUrl="NuevoUsuario.aspx" runat="server">Nuevo Usuario</asp:LinkButton>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton CssClass="nav-link" PostBackUrl="CalendarioProveedores.aspx" runat="server">Calendario Proveedores</asp:LinkButton>
+                    </li>
+                    <li class="nav-item ">
+                        <asp:LinkButton CssClass="nav-link" PostBackUrl="RecuperarContrasena.aspx" runat="server">Recuperar Datos</asp:LinkButton>
+                    </li>                                
+                    <li class="nav-item ">                        
+                        <asp:LinkButton CssClass="nav-link" PostBackUrl="AdminsitracionDeUsuarios.aspx" runat="server">Administrar Usuarios</asp:LinkButton>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">       
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</a>
+                    </li>
+                    <%--<li class="nav-item " style="float: left;">
+                        <a class="nav-link" href="#"><img src="Imagenes/conectado_2.png" height="12" />   <%Response.Write(Session("sUsuario"))%></a>
+                    </li>--%>
+                    <li class="nav-item" style="margin-left: 50px;">
+                        <asp:LinkButton class="nav-link" ID="CerrarSesionLinkButton" runat="server" PostBackUrl="~/CerrarSesion.aspx">
+                            <i class="fas fa-sign-out-alt" style="font-size: 18px;"></i> 
+                            <span style="font-size: 18px;">Cerrar Sesión </span>
+                        </asp:LinkButton>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+               
+        <div class="body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+        </div>
+    </form>
+    <script src="Content/js/bootstrap.min.js"></script>
+    <script src="Content/js/jquery.min.js"></script>
+    <script src="Content/js/bootstrap-toggle.min.js"></script>
+</body>
+</html>

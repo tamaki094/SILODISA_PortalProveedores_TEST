@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Portal_ProveedoresModelStoreContainer" CdmEntityContainer="Portal_ProveedoresEntities">
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Portal_ProveedoresModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="IDRoles" ColumnName="IDRoles" />
+          <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="Portal_ProveedoresModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="sNombre" ColumnName="sNombre" />
+          <ScalarProperty Name="sUsuario" ColumnName="sUsuario" />
+          <ScalarProperty Name="sClave" ColumnName="sClave" />
+          <ScalarProperty Name="IDRoles" ColumnName="IDRoles" />
+          <ScalarProperty Name="sEMail" ColumnName="sEMail" />
+          <ScalarProperty Name="sContacto" ColumnName="sContacto" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="sTelefono" ColumnName="sTelefono" />
+          <ScalarProperty Name="sCelular" ColumnName="sCelular" />
+          <ScalarProperty Name="sRFC" ColumnName="sRFC" />
+          <ScalarProperty Name="sDireccionFiscal" ColumnName="sDireccionFiscal" />
+          <ScalarProperty Name="bDatosActualizados" ColumnName="bDatosActualizados" />
+          <ScalarProperty Name="sExtension" ColumnName="sExtension" />
+          <ScalarProperty Name="sNombreReprLegal" ColumnName="sNombreReprLegal" />
+          <ScalarProperty Name="sNumProveedor" ColumnName="sNumProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
